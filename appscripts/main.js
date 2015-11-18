@@ -1150,13 +1150,13 @@ require(
                 canvas.style.zIndex = "-1"; 
             
 
-                var script1 = paper6.image("css/resources/about1.png", 170, 50, 700, 700); 
-                var script2 = paper6.image("css/resources/about2.png", 170, 50, 700, 700);
-                var script3 = paper6.image("css/resources/about3.png", 170, 50, 700, 700);
+                var script1 = paper8.image("css/resources/about1.png", 170, 50, 700, 700); 
+                var script2 = paper8.image("css/resources/about2.png", 170, 50, 700, 700);
+                var script3 = paper8.image("css/resources/about3.png", 170, 50, 700, 700);
 
-                var beginsb = paper6.rect(205, 230, 150, 40);
-                var methodsb = paper6.rect(440, 170, 150, 40);
-                var creditsb = paper6.rect(695, 120, 150, 40);
+                var beginsb = paper8.rect(205, 230, 150, 40);
+                var methodsb = paper8.rect(440, 170, 150, 40);
+                var creditsb = paper8.rect(695, 120, 150, 40);
                     
                 pointerMove(beginsb);
                 pointerMove(methodsb);
@@ -1213,7 +1213,7 @@ require(
                 script2.hide();
                 script3.hide();
 
-                var tie = paper6.image("css/resources/exit.png", 880, 100, 55, 55);
+                var tie = paper8.image("css/resources/exit.png", 880, 100, 55, 55);
                 tie.node.addEventListener('mousemove', function(ev){
                     tie.node.style.cursor = "pointer";
                 });            
