@@ -36,7 +36,7 @@ require(
 
 //CREATE IMAGES AND OBJECTS
         
-        var skip = paper7.image("css/resources/skip.png", 0,0,100,54);
+        var skip = paper9.image("css/resources/skip.png", 0,0,100,54);
 
         var button1 = paper4.image("css/resources/button1.png", 0, 35, 55, 55);
         var button2 = paper4.image("css/resources/button2.png", 50, 35, 55, 55);

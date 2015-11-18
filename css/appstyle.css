@@ -145,13 +145,13 @@ body {
   background-repeat: center center no-repeat;
   left: 50%;
   top: 50%;
-  margin-top: 300px;
-  margin-left: 550px;
+  margin-top: 290px;
+  margin-left: 500px;
   background-attachment: fixed;
   overflow: hidden;
   z-index:0;
-  width:70px;
-  height:30px;
+  width:100px;
+  height:54px;
 }
 
 #text {
