@@ -707,11 +707,13 @@ require(
         pointerMove(button2);
         pointerMove(button3);
         pointerMove(button4);
+        pointerMove(skip);
 
         bsound(button1);
         bsound(button2);
         bsound(button3);
         bsound(button4);
+        bsound(skip);
     
         trans(writej1);
         trans(writej2);
