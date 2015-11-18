@@ -510,7 +510,7 @@ require(
             setTimeout(function(){
                 clearInterval(fadeAudio); 
             }, 1800);   
-            spooky.loop = true;                    
+            //spooky.loop = true;                    
         }
 
         var seaon; 
@@ -527,7 +527,7 @@ require(
             setTimeout(function(){
                 clearInterval(fadeAudio); 
             }, 1000);
-            sea.loop = true;                             
+            //sea.loop = true;                             
         }
 
 
@@ -562,7 +562,7 @@ require(
             setTimeout(function(){
                 clearInterval(fadeAudio); 
             }, 1200); 
-            ai.loop = true;                            
+            //ai.loop = true;                            
         }
 
         function aifade() {
@@ -596,7 +596,7 @@ require(
             setTimeout(function(){
                 clearInterval(fadeAudio); 
             }, 1200);    
-            bei.loop = true;         
+            //bei.loop = true;         
         }
 
         function beifade() {
@@ -629,7 +629,7 @@ require(
             setTimeout(function(){
                 clearInterval(fadeAudio); 
             }, 1400);
-            kit.loop = true;                             
+            //kit.loop = true;                             
         }
 
         function kitfade() {
@@ -662,7 +662,7 @@ require(
             setTimeout(function(){
                 clearInterval(fadeAudio); 
             }, 1400);
-            ant.loop = true;                             
+            //ant.loop = true;                             
         }
 
         function antfade() {
