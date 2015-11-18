@@ -67,6 +67,9 @@ require(
         var flip = new Audio ('css/resources/flip.mp3');
         flip.volume = 0.65;
 
+        var ant = new Audio('css/resources/ant.mp3');
+        ant.volume = 0;
+
         var menu = new Audio ('css/resources/menu.mp3');
         menu.volume = 0.9;
 
@@ -478,6 +481,8 @@ require(
         }
 
 
+
+
         var spookyon; 
 
         function spookyfade() {
@@ -492,7 +497,7 @@ require(
                     clearInterval(fadeAudio); 
                     spookyon = "off";
                     spooky.pause();
-                }, 1800);   
+                }, 1600);   
             }                   
         }
 
@@ -507,7 +512,7 @@ require(
             }, 200);           
             setTimeout(function(){
                 clearInterval(fadeAudio); 
-            }, 2000);   
+            }, 1800);   
             spooky.loop = true;                    
         }
 
@@ -524,7 +529,7 @@ require(
             }, 200);           
             setTimeout(function(){
                 clearInterval(fadeAudio); 
-            }, 1200);
+            }, 1000);
             sea.loop = true;                             
         }
 
@@ -541,7 +546,7 @@ require(
                     clearInterval(fadeAudio); 
                     sea.pause();
                     seaon = "off";
-                }, 1000);
+                }, 800);
             }                      
         }
 
@@ -588,7 +593,7 @@ require(
             bei.volume = 0;
             bei.play();
             var fadeAudio = setInterval(function () {          
-                bei.volume += 0.07;
+                bei.volume += 0.1;
                 console.log("beiplay" + bei.volume);
             }, 200);           
             setTimeout(function(){
@@ -601,7 +606,7 @@ require(
             if (beion === "on") { 
                 var fadeAudio = setInterval(function () {          
                     if (bei.currentTime >= 0) {
-                        bei.volume -= 0.07;
+                        bei.volume -= 0.1;
                         console.log("beifade" + bei.volume); 
                     }
                 }, 200);           
@@ -621,12 +626,12 @@ require(
             kit.volume = 0;
             kit.play();
             var fadeAudio = setInterval(function () {          
-                kit.volume += 0.07;
+                kit.volume += 0.1;
                 console.log("kitplay" + kit.volume);
             }, 200);           
             setTimeout(function(){
                 clearInterval(fadeAudio); 
-            }, 1200);
+            }, 1400);
             kit.loop = true;                             
         }
 
@@ -634,7 +639,7 @@ require(
             if (kiton === "on") { 
                 var fadeAudio = setInterval(function () {          
                     if (kit.currentTime >= 0) {
-                        kit.volume -= 0.07;
+                        kit.volume -= 0.1;
                         console.log("kitfade" + kit.volume); 
                     }
                 }, 200);           
@@ -642,7 +647,40 @@ require(
                     clearInterval(fadeAudio); 
                     kit.pause();
                     kiton = "off";
-                }, 1000);
+                }, 1200);
+            }                  
+        }
+
+        var anton;
+
+        function antplay() {
+            anton = "on";
+            ant.load();
+            ant.volume = 0;
+            ant.play();
+            var fadeAudio = setInterval(function () {          
+                ant.volume += 0.1;
+                console.log("antplay" + ant.volume);
+            }, 200);           
+            setTimeout(function(){
+                clearInterval(fadeAudio); 
+            }, 1400);
+            ant.loop = true;                             
+        }
+
+        function antfade() {
+            if (anton === "on") { 
+                var fadeAudio = setInterval(function () {          
+                    if (ant.currentTime >= 0) {
+                        ant.volume -= 0.1;
+                        console.log("antfade" + ant.volume); 
+                    }
+                }, 200);           
+                setTimeout(function(){
+                    clearInterval(fadeAudio); 
+                    ant.pause();
+                    anton = "off";
+                }, 1200);
             }                  
         }
 
@@ -1097,10 +1135,102 @@ require(
                 window.open("https://www.facebook.com/sharer/sharer.php?u=http%3A//sherlyngxt.github.io/family/");
             });
 
-            //CLICK INFO BUTTON
-            button1.node.addEventListener('click', function(ev){
-                window.open("http://www.docdroid.net/bzgaJVt/cml-essay.pdf.html");
-            });
+    button1.node.addEventListener('click', function(ev){ 
+        console.log("click files");
+        ethno.style.zIndex = "1";   
+        
+                ethno.style.visibility = "visible";
+                canvas.style.overflow = "hidden"; 
+                div.style.visibility = "hidden";
+
+                canvas.style.opacity = "0";
+                canvas.style.transition = "opacity 1.5s";  
+                header.style.opacity = "0";
+                header.style.transition = "opacity 1.5s";
+                canvas.style.zIndex = "-1"; 
+            
+
+                var script1 = paper6.image("css/resources/about1.png", 170, 50, 700, 700); 
+                var script2 = paper6.image("css/resources/about2.png", 170, 50, 700, 700);
+                var script3 = paper6.image("css/resources/about3.png", 170, 50, 700, 700);
+
+                var beginsb = paper6.rect(205, 230, 150, 40);
+                var methodsb = paper6.rect(440, 170, 150, 40);
+                var creditsb = paper6.rect(695, 120, 150, 40);
+                    
+                pointerMove(beginsb);
+                pointerMove(methodsb);
+                pointerMove(creditsb);
+
+
+                    beginsb.attr({
+                        "fill": "white",
+                        "opacity": "0"
+                    });
+
+                    methodsb.attr({
+                        "fill": "white",
+                        "opacity": "0"
+                    });
+
+                    creditsb.attr({
+                        "fill": "white",
+                        "opacity": "0"
+                    });
+
+                    beginsb.node.addEventListener('click', function(ev){
+                        script1.show();
+                        script2.hide();
+                        script3.hide();
+                        menu.play();
+                    });
+
+                    methodsb.node.addEventListener('click', function(ev){
+                        script1.hide();
+                        script2.show();
+                        script3.hide();
+                        menu.play();
+                    });
+
+                    creditsb.node.addEventListener('click', function(ev){
+                        script1.hide();
+                        script2.hide();
+                        script3.show();
+                        menu.play();
+                    });
+
+
+                var scriptshide = function() {
+                    script1.hide();
+                    script2.hide();
+                    script3.hide();
+                    beginsb.hide();
+                    methodsb.hide();
+                    creditsb.hide();
+                }
+
+                script1.show();
+                script2.hide();
+                script3.hide();
+
+                var tie = paper6.image("css/resources/exit.png", 880, 100, 55, 55);
+                tie.node.addEventListener('mousemove', function(ev){
+                    tie.node.style.cursor = "pointer";
+                });            
+                tie.node.addEventListener('click', function(ev){
+                    tie.hide();
+                    scriptshide();
+                    canvas.style.opacity = "1";
+                    canvas.style.transition = "opacity 1.5s"; 
+                    canvas.style.zIndex = "0";  
+                    header.style.opacity = "1";
+                    header.style.transition = "opacity 1.5s";
+                    canvas.style.overflow = "auto"; 
+                    console.log("click on exit");      
+                    ethno.style.visibility = "hidden";
+                }); 
+       
+        });
 
         //CLICK THERESA PICTURE
         pic1.node.addEventListener('click', function(ev){ 
@@ -1644,6 +1774,7 @@ require(
             console.log("click files");
             anthony.style.zIndex = "1";   
             
+                antplay();
                 bgfade();
                 anthony.style.visibility = "visible";
                 canvas.style.overflow = "hidden";
@@ -1999,7 +2130,8 @@ require(
                 tie.node.addEventListener('click', function(ev){
                     photoshide();
                     scriptshide();
-                    exit();     
+                    exit();   
+                    antfade();  
                     buttonscript.hide();
                     buttonphoto.hide();                                         
                     anthony.style.visibility = "hidden";
